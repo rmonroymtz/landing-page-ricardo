@@ -27,7 +27,7 @@ jobs:
         run: npm run build -- --base "${{steps.pages.outputs.base_path}}"
 
       - name: Upload artifact
-        run: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
