@@ -1,0 +1,36 @@
+name: Deploy to github pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v4
+
+      - name: Install
+        run: npm ci
+
+      - name: Setup pages
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Build
+        run: npm run build -- --base "${{steps.pages.outputs.base_path}}"
+
+      - name: Upload artifact
+        run: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+      - name: deploy'
+        id: deploy
+        uses: actions/deploy-pages@v4
