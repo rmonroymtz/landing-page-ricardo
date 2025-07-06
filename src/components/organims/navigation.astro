@@ -1,0 +1,29 @@
+---
+import DesktopNavigation from "../molecules/desktop-navigation.astro";
+import MobileNavigation from "../molecules/mobile-navigation.astro";
+
+const navLinks = [
+  { href: "#projects", label: "Proyectos" },
+  { href: "#about", label: "Sobre Mí" },
+  { href: "#skills", label: "Habilidades" },
+  { href: "#experience", label: "Experiencia" },
+  { href: "#blog", label: "Blog" },
+  { href: "#contact", label: "Contacto" },
+];
+---
+
+<header class="bg-avocado-400 shadow-sm sticky top-0 z-40">
+  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <a
+      href="#"
+      class="text-2xl font-bold text-avocado-100 hover:text-avocado-200"
+      >Ricardo Monroy</a
+    >
+
+    <!-- Desktop Navigation -->
+    <DesktopNavigation navLinks={navLinks} />
+
+    <!-- Mobile Navigation -->
+    <MobileNavigation navLinks={navLinks} />
+  </div>
+</header>

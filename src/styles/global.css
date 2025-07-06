@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+@theme {
+  --color-avocado-100: #dad7cd;
+  --color-avocado-200: #a3b18a;
+  --color-avocado-300: #588157;
+  --color-avocado-400: #3a5a40;
+  --color-avocado-500: #344e41;
+}

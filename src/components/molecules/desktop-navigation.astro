@@ -1,0 +1,12 @@
+---
+import Navlink from "../atoms/navlink.astro";
+const { navLinks } = Astro.props;
+---
+
+<nav class="hidden md:flex space-x-8">
+  {
+    navLinks.map((navLinkProps: { href: string; label: string }) => (
+      <Navlink {...navLinkProps} />
+    ))
+  }
+</nav>

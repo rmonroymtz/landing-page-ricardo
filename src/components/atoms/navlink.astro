@@ -1,0 +1,9 @@
+---
+const { href, label, isMobile = false } = Astro.props;
+---
+
+<a
+  href={href}
+  class=`text-avocado-100 hover:text-avocado-200 ${isMobile ? 'block py-2': ''}`
+  >{label}</a
+>

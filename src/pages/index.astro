@@ -1,0 +1,31 @@
+---
+import HeroBanner from "../components/organims/hero-banner.astro";
+import Navigation from "../components/organims/navigation.astro";
+import "../styles/global.css";
+---
+
+<script>
+  // Find all buttons with the `alert` class on the page.
+  const button = document.getElementById("demo");
+
+  // Handle clicks on each button.
+  if (button) {
+    button.addEventListener("click", () => {
+      alert("Button was clicked!");
+    });
+  }
+</script>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Astro</title>
+  </head>
+  <body class="bg-avocado-200">
+    <Navigation />
+    <HeroBanner />
+  </body>
+</html>

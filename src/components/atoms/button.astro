@@ -1,0 +1,20 @@
+---
+const {
+  label = "Add label",
+  variant = "primary",
+  ...restAstroProps
+} = Astro.props;
+
+interface aviableVariantsInterface {
+  [key: string]: string;
+}
+
+const aviableVariants: aviableVariantsInterface = {
+  primary:
+    "bg-avocado-300 text-white px-6 py-3 rounded-lg font-medium hover:bg-avocado-400 transition",
+};
+---
+
+<button class={`cursor-pointer ${aviableVariants[variant]}`} {...restAstroProps}
+  >{label}</button
+>
