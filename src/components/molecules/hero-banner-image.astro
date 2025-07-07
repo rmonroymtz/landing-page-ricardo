@@ -1,0 +1,21 @@
+---
+const {
+  alt = "Desarrollador trabajando",
+  src = "https://images.unsplash.com/photo-1571171637578-41bc2dd41cd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+} = Astro.props;
+---
+
+<div class="md:w-1/2 flex justify-center">
+  <div class="relative">
+    <img
+      src={src}
+      alt={alt}
+      class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-white shadow-xl"
+    />
+    <div
+      class="absolute -bottom-5 -right-5 bg-avocado-100 text-gray-800 px-4 py-2 rounded-lg font-bold shadow-lg"
+    >
+      <span class="text-xl">5+</span> años de experiencia
+    </div>
+  </div>
+</div>

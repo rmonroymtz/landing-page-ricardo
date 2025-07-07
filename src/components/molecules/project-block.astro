@@ -1,0 +1,55 @@
+---
+import Badge from "../atoms/badge.astro";
+
+const { category, details, image, title, externalLinks, tecnologies } =
+  Astro.props;
+
+const colors: { [key: string]: string } = {
+  "Full Stack": "indigo",
+  Comercio: "green",
+  Social: "blue",
+  Productividad: "purple",
+  Educación: "yellow",
+  Salud: "red",
+};
+---
+
+<div
+  class="project-card bg-avocado-300 rounded-lg overflow-hidden shadow-md transition-all duration-300"
+>
+  <div class="h-48 overflow-hidden">
+    <img src={image.src} alt={image.alt} class="w-full h-full object-cover" />
+  </div>
+  <div class="p-6">
+    <div class="flex justify-between items-start mb-2">
+      <h3 class="text-xl font-bold text-gray-100">
+        {title}
+      </h3>
+      <Badge color={colors[category]}>
+        {category}
+      </Badge>
+    </div>
+    <p class="text-gray-200 mb-4">
+      {details}
+    </p>
+    <div class="flex flex-wrap gap-2 mb-4">
+      {
+        tecnologies.map((label = "") => (
+          <span class="bg-gray-100 text-gray-800 text-xs px-2 py-1 rounded">
+            {label}
+          </span>
+        ))
+      }
+    </div>
+    <div class="flex space-x-3">
+      {
+        externalLinks.map(({ href = "", label = "" }) => (
+          <a href={href} class="text-gray-100 hover:text-gray-300">
+            <i class="fab fa-github" />
+            {label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</div>

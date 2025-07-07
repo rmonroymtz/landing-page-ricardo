@@ -1,0 +1,107 @@
+---
+import Subtitle from "../atoms/subtitle.astro";
+import ProjectBlock from "../molecules/project-block.astro";
+
+const arrayProjects = [
+  {
+    category: "Full Stack",
+    details:
+      "Plataforma de análisis de datos en tiempo real con visualizaciones interactivas y reportes automatizados.",
+    title: "Sistema de Analítica",
+    image: {
+      alt: "Dashboard de analítica",
+      src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    },
+    tecnologies: ["React", "Node.js", "MongoDB", "D3.js"],
+    externalLinks: [
+      { href: "#", label: "Código" },
+      { href: "#", label: "Demo" },
+    ],
+  },
+  {
+    category: "Comercio",
+    details:
+      "Plataforma de e-commerce con carrito de compras, pasarela de pagos y sistema de recomendaciones.",
+    title: "Tienda Online",
+    image: {
+      alt: "Aplicación de e-commerce",
+      src: "https://images.unsplash.com/photo-1526947425960-945c6e72858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    },
+    tecnologies: ["Next.js", "Express", "PostgreSQL", "Stripe"],
+    externalLinks: [
+      { href: "#", label: "Código" },
+      { href: "#", label: "Demo" },
+    ],
+  },
+  {
+    category: "Social",
+    details:
+      "Plataforma de conexión profesional con perfiles, mensajería y sistema de recomendaciones basado en IA.",
+    title: "Red Social",
+    image: {
+      alt: "Red social",
+      src: "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    },
+    tecnologies: ["React", "GraphQL", "Firebase", "TensorFlow.js"],
+    externalLinks: [
+      { href: "#", label: "Código" },
+      { href: "#", label: "Demo" },
+    ],
+  },
+  {
+    category: "Productividad",
+    details:
+      "Aplicación para gestión de proyectos con tableros Kanban, calendario integrado y colaboración en equipo.",
+    title: "Gestor de Tareas",
+    image: {
+      alt: "Aplicación de gestión de tareas",
+      src: "https://images.unsplash.com/photo-1555421689-3f034debb7a6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    },
+    tecnologies: ["Vue.js", "NestJS", "MySQL", "WebSockets"],
+    externalLinks: [
+      { href: "#", label: "Código" },
+      { href: "#", label: "Demo" },
+    ],
+  },
+  {
+    category: "Educación",
+    details:
+      "Sistema de aprendizaje en línea con cursos interactivos, evaluaciones y seguimiento de progreso.",
+    title: "Plataforma Educativa",
+    image: {
+      alt: "Aplicación de aprendizaje",
+      src: "https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    },
+    tecnologies: ["Angular", "Django", "PostgreSQL", "FFmpeg"],
+    externalLinks: [
+      { href: "#", label: "Código" },
+      { href: "#", label: "Demo" },
+    ],
+  },
+  {
+    category: "Salud",
+    details:
+      "Aplicación para seguimiento médico con historial clínico, recordatorios de medicación y teleconsultas.",
+    title: "Sistema de Salud",
+    image: {
+      alt: "Aplicación de salud",
+      src: "https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    },
+    tecnologies: ["React Native", "Laravel", "MongoDB", "WebRTC"],
+    externalLinks: [
+      { href: "#", label: "Código" },
+      { href: "#", label: "Demo" },
+    ],
+  },
+];
+---
+
+<!-- Projects Section -->
+<section id="projects" class="py-16 bg-avocado-500">
+  <div class="container mx-auto px-4">
+    <Subtitle innerText="Proyectos Destacados" />
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {arrayProjects.map((projectProps) => <ProjectBlock {...projectProps} />)}
+    </div>
+  </div>
+</section>
